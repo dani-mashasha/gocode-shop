@@ -7,8 +7,8 @@ const Header = (props) =>{
         <div className="collection-sort">
           <label>Filter by:</label>
           <select onChange ={props.handleChange}>
-            <option value = "all items">all items</option>
-              {props.categories.map((c) => <option key={c} value={c}>{c}</option>)}
+              <option value = "all items">all items</option>
+              {props.categories? props.categories.map((c) => <option key={c} value={c}>{c}</option>): <option/>}
           </select>
         </div>
 
