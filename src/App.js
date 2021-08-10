@@ -17,15 +17,10 @@ function App() {
 
 
   const handleChange = (e) =>{
-    setProducts();
-    fetch("https://fakestoreapi.com/products")
-    .then(res => res.json())
-      .then(data =>{
-        e.target.value === "all items"? setProducts(data):setProducts(data.filter((p)=>p.category === e.target.value))
-      });
+     e.target.value === "all items"? setProducts(productsOrigin):setProducts(productsOrigin.filter((p)=>p.category === e.target.value))
   };
   
-
+  const [productsOrigin, setproductsOrigin] = useState();
   const [products, setProducts] = useState();
   const [categories, setCategories] = useState()
 
@@ -33,7 +28,10 @@ function App() {
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
     .then(res => res.json())
-      .then(data =>{setProducts(data); setCategories(Object.keys(groupBy(data, 'category'))); });
+      .then(data =>{setProducts(data);
+        setproductsOrigin(data);
+         setCategories(Object.keys(groupBy(data, 'category')));
+         });
   },[])
   
 
