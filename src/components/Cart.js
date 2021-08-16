@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import {IconButton } from "@material-ui/core";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { ListItemText } from "@material-ui/core";
 
-import { CartContext } from "./CartContext.js";
+import { CartContext } from "../contexts/CartContext.js";
 
 const Cart = () =>{
-    const [cart, setCart] = useContext(CartContext);
+    const {cart} = useContext(CartContext);
     const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
     
     return(

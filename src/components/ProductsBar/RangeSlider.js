@@ -5,7 +5,7 @@ import Slider from '@material-ui/core/Slider';
 
 import {useContext} from 'react';
 
-import { ProductsContext } from './ProductsContext.js';
+import { ProductsContext } from '../../contexts/ProductsContext.js';
 
 
 const useStyles = makeStyles({
@@ -19,7 +19,7 @@ function valuetext(value) {
 }
 
 export default function RangeSlider() {
-  const [products, setProducts, productsOrigin, setproductsOrigin] = useContext(ProductsContext);
+  const {setProducts, productsOrigin} = useContext(ProductsContext);
 
 
   const classes = useStyles();

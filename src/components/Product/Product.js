@@ -1,19 +1,14 @@
 import { useContext } from "react";
-import { CartContext } from "./CartContext.js";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../contexts/CartContext.js";
 
 
 const Product = (props) =>{
-    const [cart, setCart] = useContext(CartContext);   
-    const  addToCart = () => {
-        const newproduct = props;
-        setCart(curr => [...curr, newproduct]);
-
-    };
-
+    const {addToCart} = useContext(CartContext);   
     return(
        <div className="product-card">
             <div className="product-image">
-            <img src={props.image} alt="item"/>
+            <Link to={`/product/${props.id}`}><img src={props.image} alt="item"/></Link>
         </div>
         <div className="product-info">
             <h5>{props.title}</h5>
