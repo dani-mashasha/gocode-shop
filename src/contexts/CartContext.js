@@ -10,13 +10,13 @@ export const CartProvider = (props) => {
 
 
     const addToCart = (e) => {
-    const id = +e.target.value
-    let newproduct = cart.find(product=> product.id === id);
+    const id = e.currentTarget.value
+    let newproduct = cart.find(product=> product._id === id);
+console.log( id)
     if(newproduct){
         newproduct = {...newproduct, amount: newproduct.amount++}
-
     }else{
-         newproduct = {...products.find(product=> product.id === id), amount: 1}
+         newproduct = {...products.find(product=> product._id === id), amount: 1}
         setCart(curr => [...curr, newproduct]);
          console.log(newproduct)
     }

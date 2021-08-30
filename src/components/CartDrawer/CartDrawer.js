@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TemporaryDrawer() {
+export default function CartDrawer() {
 
   const {cart,itemsInCart} = useContext(CartContext);
   // const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0); 
@@ -64,7 +64,7 @@ export default function TemporaryDrawer() {
     <div>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <IconButton color="primary">
+          <IconButton style={{ color: '#FFFFFF'}}>
               <Badge badgeContent={itemsInCart} color="secondary" onClick={toggleDrawer(anchor, true)}>
               <AddShoppingCartIcon/>
               </Badge>

@@ -33,7 +33,6 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        Price range
       </Typography>
       <Slider
         value={value}

@@ -11,14 +11,13 @@ function ProductDetails() {
     const {id} = useParams();
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
+        fetch(`http://localhost:8080/products/${id}`)
         .then(res => res.json())
           .then(data =>{
             setProduct(data);
             setLoader(false)
              });
       });
-
 
     return(
     <>
@@ -31,14 +30,11 @@ function ProductDetails() {
             <div className="product-info">
                 <h5>{product.title}</h5>
                 <h6>${product.price}</h6>
-                <button  value = {product.id} >add to cart</button>
+                <button  value = {product._id} >add to cart</button>
             </div>
         </div>
      }
-     </>
-   
-           
-        
+     </>    
     )
 }
 

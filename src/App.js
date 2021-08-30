@@ -5,8 +5,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './views/Home.js';
 import ProductDetails from './views/ProductDetails.js';
@@ -31,7 +30,7 @@ function App() {
        <ProductsProvider>
        <CartProvider>
           <Switch>
-             <Route path="/product/:id">
+             <Route path="/products/:id">
               <ProductDetails/>
              </Route>
              <Route path="/">
